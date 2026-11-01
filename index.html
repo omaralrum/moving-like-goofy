@@ -345,14 +345,14 @@ footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule)
 </svg>
     </div>
     <p>His clips come from 45 of his films, where scene detection found 3,812 scenes and shots. Of those, 657 were judged by hand and 64 kept, giving 71 training pairs and four held out to check the model. His leg joints were marked by hand on 764 drawings. When each foot is down was marked by hand on 1,206 frames of 19 clips, and set by rule elsewhere.</p>
-    <p>The split of a style into a posture and a way of moving through it is STyMo's. Here the posture is one fixed pose, measured from his films and frozen by hand, and only the way of moving is learned: once, from the 71 pairs, 195 seconds of his film, in 103 minutes on one GPU. At run time a new performance, captured, generated or read off video, takes on the fixed pose, then the correction, then a head rule that gives him the person's gaze in place of the model's own head, then one solve that keeps it on the person's path and footing.</p>
+    <p>The split of a style into a posture and a way of moving through it is STyMo's. Here the posture is one fixed pose, measured from his films and frozen by hand, and only the way of moving is learned: once, from the 71 pairs, 195 seconds of his film, in 103 minutes on one GPU. Every frame is labelled with one of ten kinds of movement, read from the person's motion, not his: standing, arm moves and sitting or squatting make up about 70 percent of the training frames, while turns, steps, runs, jumps and kicks appear only briefly. At run time a new performance, captured, generated or read off video, takes on the fixed pose, then the correction, then a head rule that gives him the person's gaze in place of the model's own head, then one solve that keeps it on the person's path and footing.</p>
 
   </section>
 
   <section id="next">
     <h2>What's next</h2><div class="rule"></div>
     <ul>
-      <li>More data in the thin phases: a few phases hold most of the training frames, standing above all, and his manner shows most clearly there so far; two ways to grow it, marking more of his film and generating more of him.</li>
+      <li>More data in the thin phases: a few phases hold most of the training frames, standing above all, and his manner shows most clearly there so far; two ways to grow it, marking more of his film and generating more of him. More walks, runs, jumps and kicks in the training clips, a more even mix, would show whether his manner carries there as clearly as it does when the person stands still.</li>
       <li>Finer phases: group the tokenizer's codes on this project's own data, or label the person's motion by what it means, so the pairs can supply his wind-up for a moment.</li>
       <li>Better pairs: the plain version built out of his own clip, so what the model learns is his manner, not the difference between two performances.</li>
     </ul>

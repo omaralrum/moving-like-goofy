@@ -26,6 +26,23 @@ One clock, left to right: the original input, a generated video of a person; its
 
 **What the data holds.** Every moment of the training pairs carries one of ten phases, read from the person's plain performance, not from him, so standing means the person stays in place, whatever he does meanwhile. The mix is lopsided. Three phases hold about 70 percent of the frames: standing and slow moves at 29 percent, arm moves such as a wave or a stretch at 24, and sitting, squatting and crawling at 17. The other seven, among them turns, steps, walks, runs, jumps and kicks, appear mostly as slivers, a fifth of a second at the edge of some other move. Kicks are among the training clips, but a kick lasts a fraction of a second, so most of a kick clip's frames fall in other phases. So far his manner shows most clearly while the person stands still, as in the golf swing's settle after the strike and the skid's lean as the person stops. We think that is because standing is where his data is richest. That is untested; more clips in the thin phases would test it.
 
+The ten kinds of movement, by their share of the 5,860 training frames:
+
+| Kind of movement | Share of training frames | Training clips containing it (of 71) |
+|---|---|---|
+| Standing, slow moves | 28.8% | 52 |
+| Wave, bring, stretch | 24.4% | 40 |
+| Crawl, sit, squat | 17.4% | 28 |
+| Turn | 9.1% | 30 |
+| Run, walk, stop | 5.5% | 25 |
+| Run, walk, stop | 5.0% | 19 |
+| Step | 4.0% | 23 |
+| Jog, run | 3.0% | 14 |
+| Kick, dance, throw | 2.1% | 13 |
+| Climb, jump, hold | 0.8% | 6 |
+
+Run, walk, stop appears twice: the tokenizer grouped motion by how it moves across other people's data, not by what it means, so it split those into two groups with the same verbs.
+
 **Two ways to grow it.** The first is more of his film: the models trained on the hand-marked drawings mark new footage, with the eye checking samples, aimed at the thin phases, each new clip holding the move itself, such as whole walk cycles rather than a step at the edge. The second is generating more of him: a model that learns what style is across many styles, from actors performing them in motion capture, then set to his from a few clips, to make new performances where the data is thin. That gives control over the mix, but his particulars still come only from his clips: it could carry his bearing to new actions, but not invent gags he never did, and every result is still judged by eye.
 
 **Finer phases.** More clips let the phases split finer, since each needs at least three clips to be used. But the ten were grouped once from the tokenizer's codes over thousands of other people's motions, and in that grouping sitting never came apart from squatting at any count tried, so a walk may not come apart from a run however many clips are added. Two untested alternatives: group the codes on this project's own data, or label the person's motion by what it means rather than how it moves, with a vision model, about to set off rather than standing, so the pairs can supply his wind-up for that moment.
