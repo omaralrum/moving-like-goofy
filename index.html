@@ -362,10 +362,10 @@ footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule)
   <section id="next">
     <h2>What's next</h2><div class="rule"></div>
     <ul>
-      <li><b>More data in the thin phases:</b> his manner shows most clearly so far when the person stands still. More walks, runs, jumps and kicks, from more of his film or from generated performances of him, would show whether his manner carries as clearly into those moves.</li>
-      <li><b>Finer phases:</b> the ten kinds of movement are coarse. Grouping them on this project's own data, or labelling moments by intent, such as 'about to set off' instead of 'standing', would let the model add his wind-up before an action.</li>
-      <li><b>Better pairs:</b> the plain version built out of his own clip, so what the model learns is his manner, not the difference between two performances.</li>
-      <li><b>Into animation pipelines:</b> the correction works like an additive animation layer, so it could be delivered as one, dialled up or down and masked per limb in an animator's own tools. And the pairs, indexed by phase, have the shape of a motion-matching database: with enough clips, his own moves could be looked up for the moment the person is in.</li>
+      <li><b>More data where it's thin.</b> A model can only learn a manner from moves it has examples of. Most of the training frames show the person standing, gesturing or sitting, while walks, runs, jumps and kicks appear only briefly, and so far his manner shows most clearly when the person stands still. More examples of those moves, from more of his film or from generated performances of him, would show whether it carries into them too.</li>
+      <li><b>Anticipation.</b> The small wind-up before an action is one of the classic principles of animation, and a large part of how Goofy moves. The labels the model reads describe only what the body is doing, so the moment before someone sets off looks like standing. Labelling moments by intent, such as 'about to set off', would let the model learn the wind-up and add it before an action.</li>
+      <li><b>Better pairs.</b> Each training example pairs his clip with a plain performance of the same action, but two performances differ in more than manner: a different step, a different hand. The model learns those differences as style too. Building the plain version out of his own clip would leave only the manner to learn.</li>
+      <li><b>Into animation pipelines.</b> Animators already work in layers. The model's correction behaves like an additive animation layer, so it could be delivered as one, dialled up or down and masked per limb in an animator's own tools. And the pairs, sorted by kind of movement, have the shape of a motion-matching library: with enough clips, his own moves could be looked up for the moment the person is in.</li>
     </ul>
   </section>
 
