@@ -4,7 +4,7 @@
 
 Omar Alromaihi · Technical report, October 2026 · work in progress
 
-[**Project page**](https://omarintern.github.io/moving-like-goofy/)
+[**Project page**](https://omaralrum.github.io/moving-like-goofy/)
 
 ![The golf swing: the original input on the left, the Goofy-style output on the right](teaser.gif)
 
@@ -59,6 +59,6 @@ The robot: the [Unitree G1](https://www.unitree.com/g1), under NVIDIA's [GEAR-SO
 
 ## To refer to this page
 
-Omar Alromaihi. *Moving Like Goofy: teaching any character a cartoon's way of moving, from 71 example clips.* Technical report, October 2026. https://omarintern.github.io/moving-like-goofy/
+Omar Alromaihi. *Moving Like Goofy: teaching any character a cartoon's way of moving, from 71 example clips.* Technical report, October 2026. https://omaralrum.github.io/moving-like-goofy/
 
 Omar Alromaihi, 2026.

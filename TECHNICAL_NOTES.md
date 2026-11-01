@@ -1,6 +1,6 @@
 # Moving Like Goofy: technical notes
 
-The full technical text behind the [project page](https://omarintern.github.io/moving-like-goofy/).
+The full technical text behind the [project page](https://omaralrum.github.io/moving-like-goofy/).
 
 Omar Alromaihi, 2026.
 
@@ -20,7 +20,7 @@ Cartoon footage is hard to fit. The camera follows him, his drawn feet slide on 
 
 ## How it is made
 
-One clock, left to right: the original input, a generated video of a person; its 3D pose read off it; the Goofy-style output, his posture and motion, feet pinned to the floor; the same output seen from the shot's camera; a video model rendering him into the shot from it. A kick, from the first of the three stages shown, trained on 17 example clips, before the final pass. The clip: [kick_chain.mp4](https://omarintern.github.io/moving-like-goofy/media/kick_chain.mp4).
+One clock, left to right: the original input, a generated video of a person; its 3D pose read off it; the Goofy-style output, his posture and motion, feet pinned to the floor; the same output seen from the shot's camera; a video model rendering him into the shot from it. A kick, from the first of the three stages shown, trained on 17 example clips, before the final pass. The clip: [kick_chain.mp4](https://omaralrum.github.io/moving-like-goofy/media/kick_chain.mp4).
 
 ## What's next
 
