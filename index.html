@@ -121,6 +121,11 @@ figure.strip figcaption a.seek { color: #9ec1ff; }
 .up-panes canvas { width: 100%; aspect-ratio: var(--up-ar); display: block; background: #3a3a3c; border-radius: 6px; }
 @media (max-width: 640px) { .up-panes { grid-template-columns: 1fr; } }
 .up-vids { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.phases { max-width: 70ch; }
+.phases table { table-layout: fixed; }
+.phases thead th { white-space: normal; vertical-align: bottom; line-height: 1.35; }
+.phases thead th:first-child { width: 46%; }
+.phases-note { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: -8px; }
 .tbl { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
 th, td { padding: 9px 10px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
@@ -345,14 +350,19 @@ footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule)
 </svg>
     </div>
     <p>His clips come from 45 of his films, where scene detection found 3,812 scenes and shots. Of those, 657 were judged by hand and 64 kept, giving 71 training pairs and four held out to check the model. His leg joints were marked by hand on 764 drawings. When each foot is down was marked by hand on 1,206 frames of 19 clips, and set by rule elsewhere.</p>
-    <p>The split of a style into a posture and a way of moving through it is STyMo's. Here the posture is one fixed pose, measured from his films and frozen by hand, and only the way of moving is learned: once, from the 71 pairs, 195 seconds of his film, in 103 minutes on one GPU. Every frame is labelled with one of ten kinds of movement, read from the person's motion, not his: standing, arm moves and sitting or squatting make up about 70 percent of the training frames, while turns, steps, runs, jumps and kicks appear only briefly. At run time a new performance, captured, generated or read off video, takes on the fixed pose, then the correction, then a head rule that gives him the person's gaze in place of the model's own head, then one solve that keeps it on the person's path and footing.</p>
+    <p>The split of a style into a posture and a way of moving through it is STyMo's. Here the posture is one fixed pose, measured from his films and frozen by hand, and only the way of moving is learned: once, from the 71 pairs, 195 seconds of his film, in 103 minutes on one GPU.</p>
+    <p>Every frame is labelled with one of ten kinds of movement, read from the person's motion, not his.</p>
+    <div class="tbl phases"><table><thead><tr><th scope="col">Kind of movement</th><th scope="col">Share of training frames</th><th scope="col">Training clips containing it (of 71)</th></tr></thead><tbody><tr><th scope="row">Standing, slow moves</th><td>28.8%</td><td>52</td></tr><tr><th scope="row">Wave, bring, stretch</th><td>24.4%</td><td>40</td></tr><tr><th scope="row">Crawl, sit, squat</th><td>17.4%</td><td>28</td></tr><tr><th scope="row">Turn</th><td>9.1%</td><td>30</td></tr><tr><th scope="row">Run, walk, stop*</th><td>5.5%</td><td>25</td></tr><tr><th scope="row">Run, walk, stop*</th><td>5.0%</td><td>19</td></tr><tr><th scope="row">Step</th><td>4.0%</td><td>23</td></tr><tr><th scope="row">Jog, run</th><td>3.0%</td><td>14</td></tr><tr><th scope="row">Kick, dance, throw</th><td>2.1%</td><td>13</td></tr><tr><th scope="row">Climb, jump, hold</th><td>0.8%</td><td>6</td></tr></tbody></table></div>
+    <p class="phases-note">Most kinds appear briefly inside clips that are mostly something else: a turn shows up in 30 clips but only 9 percent of the frames.</p>
+    <p class="phases-note">*The tokenizer split these by how they move, not by what they are.</p>
+    <p>At run time a new performance, captured, generated or read off video, takes on the fixed pose, then the correction, then a head rule that gives him the person's gaze in place of the model's own head, then one solve that keeps it on the person's path and footing.</p>
 
   </section>
 
   <section id="next">
     <h2>What's next</h2><div class="rule"></div>
     <ul>
-      <li>More data in the thin phases: a few phases hold most of the training frames, standing above all, and his manner shows most clearly there so far; two ways to grow it, marking more of his film and generating more of him. More walks, runs, jumps and kicks in the training clips, a more even mix, would show whether his manner carries there as clearly as it does when the person stands still.</li>
+      <li>More data in the thin phases: his manner shows most clearly so far when the person stands still; two ways to grow it, marking more of his film and generating more of him. More walks, runs, jumps and kicks in the training clips, a more even mix, would show whether his manner carries there as clearly as it does when the person stands still.</li>
       <li>Finer phases: group the tokenizer's codes on this project's own data, or label the person's motion by what it means, so the pairs can supply his wind-up for a moment.</li>
       <li>Better pairs: the plain version built out of his own clip, so what the model learns is his manner, not the difference between two performances.</li>
     </ul>
